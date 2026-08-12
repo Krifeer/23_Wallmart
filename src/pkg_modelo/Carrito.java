@@ -2,7 +2,7 @@ package pkg_modelo;
 import java.util.ArrayList;
 
 /**
- *
+ * Joshua estuvp aqui
  * @author h45ch
  */
 public class Carrito {
