@@ -1,5 +1,6 @@
 package pkg_vista;
 
+import pkg_controlador.TiendaControlador;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -13,6 +14,7 @@ public class Vista extends javax.swing.JFrame {
     public DefaultTableModel tablaProducto;
     public DefaultTableModel tablaCarrito;
     public String nombreSeleccionado=null;//originalmente
+    private TiendaControlador tiendaControlador;
     
     /**
      * Creates new form Vista
@@ -21,6 +23,7 @@ public class Vista extends javax.swing.JFrame {
         initComponents();
         tablaProducto = (DefaultTableModel) tblProductos.getModel();
         tablaCarrito = (DefaultTableModel) tableCarrito.getModel();
+        tiendaControlador = new TiendaControlador(this);
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -160,18 +163,22 @@ public class Vista extends javax.swing.JFrame {
     
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
+        tiendaControlador.agregarAlCarrito();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
+        tiendaControlador.actualizarTienda();
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarActionPerformed
         // TODO add your handling code here:
+        tiendaControlador.quitarDelCarrito();
     }//GEN-LAST:event_btnQuitarActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
         // TODO add your handling code here:
+        tiendaControlador.realizarCompra();
     }//GEN-LAST:event_btnComprarActionPerformed
 
     /**
